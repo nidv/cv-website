@@ -130,8 +130,8 @@ body {
 }
 
 .profile-image img {
-    width: 100%;
-    height: 235px;
+    width: 100%;    /* Fills the width of its grid/column wrapper */
+    height: auto;   /* Allows the height to scale proportionally */
     object-fit: contain;
     border-radius: 15%;
     box-shadow: 5px 5px 5px 5px #cdb273;
@@ -189,14 +189,15 @@ body {
     }
 
     .profile-image img {
-        height: 350px;
+        max-height: 40vh;
     }
 }
 
 @media (max-width: 768px) {
 
     .container {
-        padding: 40px 25px;
+        /* CHANGED: Using percentages so padding shrinks on tiny screens */
+        padding: 5% 4%;
     }
 
     .job-header {
@@ -205,7 +206,7 @@ body {
 
     .name-small {
         font-size: 1.4rem;
-        letter-spacing: 8px;
+        letter-spacing: 0.5rem; /* CHANGED: rem keeps spacing proportional to text size */
     }
 
     .name-large {
