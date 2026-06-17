@@ -1,49 +1,56 @@
+/* :root = här sparar vi färgerna som "variabler" så vi kan återanvända dem
+   överallt. Vill man byta färg ändrar man bara på ett ställe. */
 :root {
-    --background: #d9d9d9;
-    --text: #222222;
-    --secondary: #666666;
-    --line: #555555;
+    --background: #d9d9d9; /* grå bakgrund på hela sidan */
+    --text: #222222;       /* nästan-svart för vanlig text */
+    --secondary: #666666;  /* grå för mindre viktig text */
+    --line: #555555;       /* färg på de tunna linjerna (divider) */
     --white: #ffffff;
 }
 
+/* * betyder "alla element". Vi nollställer marginaler/padding så att
+   webbläsarens standardavstånd inte ställer till det. */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* gör att padding räknas IN i bredden, lättare att räkna */
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* typsnittet vi laddade i HTML:en (sans-serif = reserv) */
     background: var(--background);
     color: var(--text);
-    line-height: 1.7;
+    line-height: 1.7; /* lite extra luft mellan textraderna så det blir lättläst */
 }
 
+/* container = yttre lådan som centrerar innehållet och håller det lagom brett */
 .container {
-    max-width: 1400px;
-    margin: auto;
-    padding: 60px 50px;
+    max-width: 1400px; /* växer aldrig bredare än så här */
+    margin: auto;      /* auto på sidorna = centrerat horisontellt */
+    padding: 60px 50px; /* luft inuti: 60px upp/ner, 50px vänster/höger */
 }
 
+/* cv-grid = lägger ut sidan i ett rutnät med två kolumner */
 .cv-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 70px;
+    grid-template-columns: 2fr 1fr; /* vänster kolumn dubbelt så bred som höger */
+    gap: 70px; /* mellanrum mellan kolumnerna */
 }
 
 /* ===== HERO ===== */
+/* toppen med namn och presentation */
 
 .name-small {
     font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 12px;
+    font-weight: 300;     /* tunt */
+    letter-spacing: 12px; /* stort mellanrum mellan bokstäverna, ger luftig känsla */
 }
 
 .name-large {
-    font-size: 6rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 40px;
+    font-size: 6rem;     /* riktigt stort */
+    font-weight: 800;    /* väldigt tjockt */
+    line-height: 1;      /* tight radhöjd så det inte blir för mycket luft kring det stora namnet */
+    margin-bottom: 40px; /* avstånd ner till nästa sak */
 }
 
 .job-title {
@@ -53,40 +60,45 @@ body {
 }
 
 .summary {
-    max-width: 700px;
+    max-width: 700px;  /* begränsar radlängden så texten blir behagligare att läsa */
     font-size: 1.05rem;
 }
 
 /* ===== SECTIONS ===== */
+/* generella regler för avsnitten (erfarenhet, utbildning osv) */
 
 .section {
-    margin-top: 70px;
+    margin-top: 70px; /* luft ovanför varje nytt avsnitt */
 }
 
+/* rubrikerna i både vänster- och högerkolumnen får samma stil */
 .section-header h2,
 .sidebar-section h2 {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 800;    /* fett */
     letter-spacing: 5px;
     margin-bottom: 15px;
 }
 
+/* divider = den tunna vågräta linjen under rubrikerna */
 .divider {
-    height: 1px;
-    background: var(--line);
+    height: 1px;             /* 1 pixel tjock = hårfin linje */
+    background: var(--line); /* grå färg från variablerna */
     margin-bottom: 25px;
 }
 
 /* ===== EXPERIENCE ===== */
 
+/* job-header = raden med titel/företag till vänster och datum till höger */
 .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
+    display: flex;                  
+    justify-content: space-between; /* trycker isär dem mot var sin kant */
+    align-items: flex-start;        /* linjerar dem upptill */
+    gap: 20px;                      /* minsta mellanrum mellan dem */
     margin-bottom: 20px;
 }
 
+/* samma rubrikstorlek för jobb, utbildning och certifikat */
 .job h3,
 .education h3,
 .certification h3 {
@@ -94,34 +106,36 @@ body {
 }
 
 .company {
-    color: var(--secondary);
+    color: var(--secondary); /* grå, lite mer nedtonad än vanlig text */
 }
 
 .date {
-    font-weight: 600;
+    font-weight: 600; /* halvfet så datumet sticker ut lite */
 }
 
 .job ul {
-    padding-left: 20px;
+    padding-left: 20px; /* indrag så punkterna inte ligger i kanten */
 }
 
 .job li {
-    margin-bottom: 12px;
+    margin-bottom: 12px; /* luft mellan punkterna i listan */
 }
 
 /* ===== SIDEBAR ===== */
+/* högerkolumnen */
 
 .sidebar {
-    padding-top: 20px;
+    padding-top: 20px; /* lite luft i toppen så den linjerar snyggt med vänsterkolumnen */
 }
 
 .contact {
     margin-bottom: 40px;
 }
 
+/* contact-item = ikon + text bredvid varandra */
 .contact-item {
-    display: flex;
-    gap: 15px;
+    display: flex; /* ikon och text på samma rad */
+    gap: 15px;     /* mellanrum mellan ikon och text */
     margin-bottom: 20px;
 }
 
@@ -129,39 +143,43 @@ body {
     margin-bottom: 50px;
 }
 
+/* själva profilbilden */
 .profile-image img {
-    width: 100%;    /* Fills the width of its grid/column wrapper */
-    height: auto;   /* Allows the height to scale proportionally */
-    object-fit: contain;
-    border-radius: 15%;
-    box-shadow: 5px 5px 5px 5px #cdb273;
-    filter: grayscale(100%);
+    width: 100%;    
+    height: auto;   
+    object-fit: contain;             /* hela bilden får plats utan att beskäras */
+    border-radius: 15%;              /* rundade hörn */
+    box-shadow: 5px 5px 5px 5px #cdb273; /* gyllene skugga runt bilden */
+    filter: grayscale(100%);         /* gör bilden svartvit */
 }
 
 .sidebar-section {
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* luft mellan avsnitten i sidofältet */
 }
 
 .sidebar-section ul {
-    padding-left: 20px;
+    padding-left: 20px; /* indrag på listorna */
 }
 
 .sidebar-section li {
     margin-bottom: 10px;
 }
 
+/* länkarna i sidofältet (t.ex. portfolio-länken) */
 .sidebar-section a {
-    color: var(--text);
-    text-decoration: none;
+    color: var(--text);     /* samma färg som vanlig text istället för knallblå */
+    text-decoration: none;  /* tar bort understrykningen */
     font-weight: 600;
 }
 
 .sidebar-section a:hover {
-    opacity: 0.7;
+    opacity: 0.7; /* tonas ner lite när man hovrar med musen, ger en "klickbar" känsla */
 }
 
 /* ===== HOVER EFFECTS ===== */
+/* små rörelser när man håller musen över en ruta */
 
+/* transition = gör att förändringen sker mjukt under 0.3 sekunder istället för direkt */
 .job,
 .education,
 .certification,
@@ -169,48 +187,52 @@ body {
     transition: 0.3s ease;
 }
 
+/* :hover = "när musen är över". Rutan lyfts upp 3px för en liten studseffekt */
 .job:hover,
 .education:hover,
 .certification:hover,
 .sidebar-section:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* negativt värde = flytta uppåt */
 }
 
 /* ===== RESPONSIVE ===== */
+/* media-frågor = olika regler beroende på skärmens bredd (mobil/surfplatta) */
 
+/* skärmar smalare än 992px (typ surfplatta): */
 @media (max-width: 992px) {
 
     .cv-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* en kolumn istället för två - allt staplas ovanpå varandra */
     }
 
     .name-large {
-        font-size: 4rem;
+        font-size: 4rem; /* mindre namn så det får plats */
     }
 
     .profile-image img {
-        max-height: 40vh;
+        max-height: 40vh; /* begränsar bildhöjden till 40% av skärmhöjden */
     }
 }
 
+/* skärmar smalare än 768px (typ mobil): krymper text och avstånd ytterligare */
 @media (max-width: 768px) {
 
     .container {
         /* CHANGED: Using percentages so padding shrinks on tiny screens */
-        padding: 5% 4%;
+        padding: 5% 4%; /* procent gör att kanterna krymper med skärmen */
     }
 
     .job-header {
-        flex-direction: column;
+        flex-direction: column; /* titel och datum staplas under varandra istället för bredvid */
     }
 
     .name-small {
         font-size: 1.4rem;
-        letter-spacing: 0.5rem; /* CHANGED: rem keeps spacing proportional to text size */
+        letter-spacing: 0.5rem; /* rem bibehåller proportionellt avstånd i förhållande till textstorleken */
     }
 
     .name-large {
-        font-size: 3rem;
+        font-size: 3rem; /* ännu mindre namn på liten skärm */
     }
 
     .job-title {
@@ -219,6 +241,6 @@ body {
 
     .section-header h2,
     .sidebar-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* mindre rubriker */
     }
 }

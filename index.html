@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Jane Doe | Digital Content Creator</title>
+    <!-- head = osynliga inställningar för sidan, syns inte i själva fönstret -->
+    <meta charset="UTF-8"> <!-- tecken-kodning så att åäö och liknande visas rätt -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- gör att sidan anpassar sig till mobilens bredd -->
+    <meta name="robots" content="noindex, nofollow" /> <!-- ber Google m.fl. att INTE indexera/följa sidan -->
+    <title>Jane Doe | Digital Content Creator</title> <!-- texten som syns i webbläsarfliken -->
+    <!-- preconnect = säg till webbläsaren i förväg att vi ska hämta Google Fonts, snabbare laddning -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- hämtar typsnittet Montserrat i olika tjocklekar (300=tunt ... 800=väldigt fett) -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- kopplar in vår CSS-fil där allt utseende bestäms -->
 </head>
 
 <body>
 
+<!-- container = en yttre låda som håller ihop allt och centrerar innehållet -->
 <div class="container">
 
+    <!-- cv-grid = själva CV:t, uppdelat i två kolumner (stor vänster + smal höger) -->
     <main class="cv-grid">
 
         <!-- LEFT COLUMN -->
+        <!-- vänsterkolumnen: namn, erfarenhet, utbildning, certifikat -->
         <section class="main-content">
 
+            <!-- hero = "toppen" på sidan med namn och kort presentation -->
             <header class="hero">
 
-                <h2 class="name-small">Jane</h2>
-                <h1 class="name-large">Doe</h1>
+                <h2 class="name-small">Jane</h2> <!-- förnamnet, litet och tunt -->
+                <h1 class="name-large">Doe</h1> <!-- efternamnet, stort och fett (h1 = sidans viktigaste rubrik) -->
 
                 <h3 class="job-title">
                     DIGITAL CONTENT CREATOR
                 </h3>
 
+                <!-- summary = kort sammanfattning/pitch om personen -->
                 <p class="summary">
                     Creative and detail-oriented Digital Content Creator with 4+ years 
                     of experience producing engaging multimedia content for brands and 
@@ -40,6 +48,7 @@
             </header>
 
             <!-- EXPERIENCE -->
+            <!-- avsnittet med jobberfarenhet -->
 
             <section class="section">
 
@@ -47,10 +56,12 @@
                     <h2>EXPERIENCE</h2>
                 </div>
 
-                <div class="divider"></div>
+                <div class="divider"></div> <!-- divider = den tunna linjen under rubriken -->
 
+                <!-- article = ett enskilt jobb (egen "ruta" som man kan återanvända) -->
                 <article class="job">
 
+                    <!-- job-header = rad högst upp i jobbet: titel/företag till vänster, datum till höger -->
                     <div class="job-header">
 
                         <div>
@@ -66,10 +77,11 @@
 
                     </div>
 
+                    <!-- ul = punktlista med vad man gjort på jobbet -->
                     <ul>
                         <li>
-                            Developed and managed content campaigns 
-                            across social media platforms, blogs, 
+                            Developed and managed content campaigns
+                            across social media platforms, blogs,
                             and newsletters.
                         </li>
 
@@ -94,7 +106,8 @@
                     </ul>                  
 
                 </article>
-                <br>                
+                <br> <!-- tom rad för lite luft mellan de två jobben -->
+                <!-- andra jobbet, samma upplägg som ovan -->
                 <article class="job">
 
                     <div class="job-header">
@@ -139,6 +152,7 @@
             </section>
 
             <!-- EDUCATION -->
+            <!-- avsnittet med utbildning -->
 
             <section class="section">
 
@@ -148,6 +162,7 @@
 
                 <div class="divider"></div>
 
+                <!-- article = en utbildning: examen, skola och när man tog examen -->
                 <article class="education">
 
                     <h3>
@@ -167,6 +182,7 @@
             </section>
 
             <!-- CERTIFICATIONS -->
+            <!-- avsnittet med certifikat/intyg -->
 
             <section class="section">
 
@@ -176,6 +192,7 @@
 
                 <div class="divider"></div>
 
+                <!-- här ligger två certifikat i samma article, åtskilda av tomma rader (br) -->
                 <article class="certification">
 
                     <h3>
@@ -209,13 +226,16 @@
         </section>
 
         <!-- RIGHT COLUMN -->
+        <!-- högerkolumnen (aside = sidoinnehåll): kontakt, bild, skills, portfolio, språk -->
 
         <aside class="sidebar">
 
+            <!-- kontaktuppgifter -->
             <section class="contact">
 
+                <!-- contact-item = en rad med ikon + text bredvid varandra -->
                 <div class="contact-item">
-                    <span>📞</span>
+                    <span>📞</span> <!-- emoji används här som liten ikon -->
                     <p>123-456-7890</p>
                 </div>
 
@@ -231,10 +251,12 @@
 
             </section>
 
+            <!-- profilbilden (alt-texten beskriver bilden för skärmläsare/om bilden inte laddas) -->
             <section class="profile-image">
                 <img src="images/profile.jpg" alt="Profile Photo">
             </section>
 
+            <!-- SKILLS = lista med färdigheter -->
             <section class="sidebar-section">
 
                 <h2>SKILLS</h2>
@@ -256,12 +278,14 @@
 
             </section>
 
+            <!-- PORTFOLIO = länk till arbetsprover + kort beskrivning -->
             <section class="sidebar-section">
 
                 <h2>PORTFOLIO</h2>
 
                 <div class="divider"></div>
                 <p>
+                <!-- a = klickbar länk. target="_blank" öppnar den i en ny flik -->
                 <a href="https://www.google.com" target="_blank">
                     www.janedoe-portfolio.com
                 </a>
@@ -275,6 +299,7 @@
 
             </section>
 
+            <!-- LANGUAGES = vilka språk personen kan -->
             <section class="sidebar-section">
 
                 <h2>LANGUAGES</h2>
@@ -289,6 +314,7 @@
             </section>
 
         </aside>
+        <!-- slut på högerkolumnen -->
 
     </main>
 
